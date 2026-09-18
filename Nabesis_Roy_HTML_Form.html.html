@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Portal</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#registration">Registration</a>
+        <a href="#profile">Student Profile</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <header id="home">
+        <h1>Student Registration &amp; Profile Portal</h1>
+        <p>A one-stop online portal for enrolling students, managing profiles, and keeping academic records accurate and up to date.</p>
+    </header>
+
+    <main>
+
+        <section>
+            <article id="about">
+                <h2>About the Student Registration Portal</h2>
+
+                <p>
+                    The <strong>Student Registration Portal</strong> was created to make the enrollment process
+                    faster, easier, and more organized for both students and the college registrar. Instead of
+                    filling out paper forms, students can now encode their <em>personal</em>, <em>contact</em>,
+                    and <em>academic</em> information directly online. This reduces long queues, minimizes lost
+                    documents, and allows the registrar's office to process applications more efficiently.
+                </p>
+
+                <hr>
+
+                <p>
+                    Providing <u>accurate and complete</u> student information is extremely important. Errors in
+                    a student's name, birth date, or program can lead to problems with grades, certificates, and
+                    even graduation records. That is why fields such as <mark>Student ID</mark> and
+                    <mark>Email Address</mark> are marked as required — the system will not accept the form until
+                    these are properly filled out.
+                </p>
+
+                <p>
+                    Technology plays a big role in improving student registration. An online system can validate
+                    entries automatically<sup>1</sup>, store records digitally, and give students instant
+                    confirmation<sub>(ref)</sub> once their registration is submitted.
+                    <small>(See the FAQ section below for more details.)</small>
+                </p>
+            </article>
+        </section>
+
+        <section id="registration">
+            <h2>Student Registration Form</h2>
+
+            <form action="#" method="post">
+
+                <!-- FIELDSET 1: PERSONAL INFORMATION -->
+                <fieldset>
+                    <legend>Personal Information</legend>
+
+                    <p>
+                        <label for="student_id">Student ID:</label><br>
+                        <input type="text" id="student_id" name="student_id"
+                               placeholder="e.g. 2026-00001" maxlength="10"
+                               pattern="[0-9]{4}-[0-9]{5}"
+                               title="Format: 2026-00001" required>
+                    </p>
+
+                    <p>
+                        <label for="first_name">First Name:</label><br>
+                        <input type="text" id="first_name" name="first_name"
+                               placeholder="Juan" maxlength="30" required>
+                    </p>
+
+                    <p>
+                        <label for="middle_name">Middle Name:</label><br>
+                        <input type="text" id="middle_name" name="middle_name"
+                               placeholder="Santos (optional)" maxlength="30">
+                    </p>
+
+                    <p>
+                        <label for="last_name">Last Name:</label><br>
+                        <input type="text" id="last_name" name="last_name"
+                               placeholder="Dela Cruz" required>
+                    </p>
+
+                    <p>
+                        <label for="dob">Date of Birth:</label><br>
+                        <input type="date" id="dob" name="dob" required>
+                    </p>
+
+                    <p>
+                        <label for="age">Age:</label><br>
+                        <input type="number" id="age" name="age" min="15" max="100" required>
+                    </p>
+
+                    <p>
+                        Gender:<br>
+                        <input type="radio" id="male" name="gender" value="Male" checked>
+                        <label for="male">Male</label>
+
+                        <input type="radio" id="female" name="gender" value="Female">
+                        <label for="female">Female</label>
+
+                        <input type="radio" id="no_say" name="gender" value="Prefer not to say">
+                        <label for="no_say">Prefer not to say</label>
+                    </p>
+                </fieldset>
+
+                <!-- FIELDSET 2: CONTACT INFORMATION -->
+                <fieldset>
+                    <legend>Contact Information</legend>
+
+                    <p>
+                        <label for="email">Email Address:</label><br>
+                        <input type="email" id="email" name="email"
+                               placeholder="juan.delacruz@email.com"
+                               autocomplete="email" required>
+                    </p>
+
+                    <p>
+                        <label for="mobile">Mobile Number:</label><br>
+                        <input type="tel" id="mobile" name="mobile"
+                               placeholder="09xx-xxx-xxxx"
+                               maxlength="11"
+                               pattern="09[0-9]{9}"
+                               autocomplete="tel">
+                    </p>
+
+                    <p>
+                        <label for="portfolio">Facebook/Portfolio URL:</label><br>
+                        <input type="url" id="portfolio" name="portfolio"
+                               placeholder="https://facebook.com/yourname">
+                    </p>
+
+                    <p>
+                        <label for="address">Complete Address:</label><br>
+                        <textarea id="address" name="address" rows="4" cols="40"
+                                  placeholder="House No., Street, Barangay, City, Province"></textarea>
+                    </p>
+                </fieldset>
+
+                <!-- FIELDSET 3: ACADEMIC INFORMATION -->
+                <fieldset>
+                    <legend>Academic Information</legend>
+
+                    <p>
+                        <label for="college">College/School:</label><br>
+                        <select id="college" name="college" required>
+                            <option value="">-- Select College/School --</option>
+                            <option value="DNSC" selected>Davao del Norte State College</option>
+                            <option value="Other State College">Other State College</option>
+                            <option value="Private College">Private College</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="program">Degree Program:</label><br>
+                        <select id="program" name="program" required>
+                            <option value="">-- Select Program --</option>
+                            <option value="BSIT">BS Information Technology</option>
+                            <option value="BSIS">BS Information Systems</option>
+                            <option value="BSCS">BS Computer Science</option>
+                            <option value="BLIS">BS Library and Information Science</option>
+                            <option value="BSDS">BS Data Science</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        Year Level:<br>
+                        <input type="radio" id="year1" name="year_level" value="1st Year" checked>
+                        <label for="year1">1st Year</label>
+
+                        <input type="radio" id="year2" name="year_level" value="2nd Year">
+                        <label for="year2">2nd Year</label>
+
+                        <input type="radio" id="year3" name="year_level" value="3rd Year">
+                        <label for="year3">3rd Year</label>
+
+                        <input type="radio" id="year4" name="year_level" value="4th Year">
+                        <label for="year4">4th Year</label>
+                    </p>
+
+                    <p>
+                        <label for="student_type">Student Type:</label><br>
+                        <select id="student_type" name="student_type">
+                            <option value="Regular" selected>Regular</option>
+                            <option value="Irregular">Irregular</option>
+                            <option value="Transferee">Transferee</option>
+                            <option value="Returning Student">Returning Student</option>
+                        </select>
+                    </p>
+                </fieldset>
+
+                <!-- FIELDSET 4: SKILLS AND INTERESTS -->
+                <fieldset>
+                    <legend>Skills and Interests</legend>
+                    <p>Select all that apply:</p>
+
+                    <input type="checkbox" id="skill_html" name="skills" value="HTML" checked>
+                    <label for="skill_html">HTML</label><br>
+
+                    <input type="checkbox" id="skill_css" name="skills" value="CSS" checked>
+                    <label for="skill_css">CSS</label><br>
+
+                    <input type="checkbox" id="skill_js" name="skills" value="JavaScript" checked>
+                    <label for="skill_js">JavaScript</label><br>
+
+                    <input type="checkbox" id="skill_python" name="skills" value="Python">
+                    <label for="skill_python">Python</label><br>
+
+                    <input type="checkbox" id="skill_java" name="skills" value="Java">
+                    <label for="skill_java">Java</label><br>
+
+                    <input type="checkbox" id="skill_php" name="skills" value="PHP">
+                    <label for="skill_php">PHP</label><br>
+
+                    <input type="checkbox" id="skill_db" name="skills" value="Database Management">
+                    <label for="skill_db">Database Management</label><br>
+
+                    <input type="checkbox" id="skill_net" name="skills" value="Networking">
+                    <label for="skill_net">Networking</label><br>
+
+                    <input type="checkbox" id="skill_design" name="skills" value="Graphic Design">
+                    <label for="skill_design">Graphic Design</label><br>
+
+                    <input type="checkbox" id="skill_video" name="skills" value="Video Editing">
+                    <label for="skill_video">Video Editing</label><br>
+
+                    <input type="checkbox" id="skill_cyber" name="skills" value="Cybersecurity">
+                    <label for="skill_cyber">Cybersecurity</label><br>
+
+                    <input type="checkbox" id="skill_ai" name="skills" value="Artificial Intelligence">
+                    <label for="skill_ai">Artificial Intelligence</label>
+                </fieldset>
+
+                <!-- FIELDSET 5: PREFERRED LEARNING MODALITY -->
+                <fieldset>
+                    <legend>Preferred Learning Modality</legend>
+
+                    <p>
+                        <input type="radio" id="modality_f2f" name="modality" value="Face-to-Face" checked>
+                        <label for="modality_f2f">Face-to-Face</label>
+
+                        <input type="radio" id="modality_online" name="modality" value="Online">
+                        <label for="modality_online">Online</label>
+
+                        <input type="radio" id="modality_blended" name="modality" value="Blended Learning">
+                        <label for="modality_blended">Blended Learning</label>
+                    </p>
+
+                    <p>
+                        <label for="schedule">Preferred Schedule:</label><br>
+                        <select id="schedule" name="schedule">
+                            <option value="Morning">Morning</option>
+                            <option value="Afternoon">Afternoon</option>
+                            <option value="Evening">Evening</option>
+                            <option value="Weekend">Weekend</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="learning_tool">Preferred Learning Tool:</label><br>
+                        <input list="tools" id="learning_tool" name="learning_tool"
+                               placeholder="Start typing or choose one">
+                        <datalist id="tools">
+                            <option value="Google Classroom">
+                            <option value="Microsoft Teams">
+                            <option value="Moodle">
+                            <option value="Canvas">
+                            <option value="Zoom">
+                        </datalist>
+                    </p>
+                </fieldset>
+
+                <!-- FIELDSET 6: PROFILE INFORMATION -->
+                <fieldset>
+                    <legend>Profile Information</legend>
+
+                    <p>
+                        <label for="profile_pic">Profile Picture:</label><br>
+                        <input type="file" id="profile_pic" name="profile_pic" accept="image/*">
+                    </p>
+
+                    <p>
+                        <label for="documents">Supporting Documents :</label><br>
+                        <input type="file" id="documents" name="documents[]" multiple>
+                    </p>
+
+                    <p>
+                        <label for="motto">Personal Motto:</label><br>
+                        <textarea id="motto" name="motto" rows="3" cols="40"
+                                  placeholder="Your personal motto in life"></textarea>
+                    </p>
+
+                    <p>
+                        <label for="fav_color">Favorite Color:</label><br>
+                        <input type="color" id="fav_color" name="fav_color" value="#2255aa">
+                    </p>
+
+                    <p>
+                        <label for="fav_number">Favorite Number (1-100):</label><br>
+                        <input type="range" id="fav_number" name="fav_number" min="1" max="100" value="50">
+                    </p>
+
+                    <p>
+                        <label for="personal_site">Personal Website:</label><br>
+                        <input type="url" id="personal_site" name="personal_site"
+                               placeholder="https://yourwebsite.com">
+                    </p>
+                </fieldset>
+
+                <!-- FIELDSET 7: STUDENT SURVEY -->
+                <fieldset>
+                    <legend>Student Survey</legend>
+
+                    <p>
+                        <label for="confidence">How confident are you with computers?</label><br>
+                        1 — Very Low &nbsp;
+                        <input type="range" id="confidence" name="confidence" min="1" max="5" value="3">
+                        &nbsp; 5 — Very High
+                    </p>
+
+                    <p>
+                        How often do you use a computer?<br>
+                        <input type="radio" id="usage1" name="usage" value="Less than 1 hour/day">
+                        <label for="usage1">Less than 1 hour/day</label><br>
+
+                        <input type="radio" id="usage2" name="usage" value="1-3 hours/day" checked>
+                        <label for="usage2">1–3 hours/day</label><br>
+
+                        <input type="radio" id="usage3" name="usage" value="4-6 hours/day">
+                        <label for="usage3">4–6 hours/day</label><br>
+
+                        <input type="radio" id="usage4" name="usage" value="More than 6 hours/day">
+                        <label for="usage4">More than 6 hours/day</label>
+                    </p>
+
+                    <p>
+                        <label for="tech_interest">Which technology interests you the most?</label><br>
+                        <select id="tech_interest" name="tech_interest">
+                            <option value="Web Development">Web Development</option>
+                            <option value="Mobile Development">Mobile Development</option>
+                            <option value="Artificial Intelligence">Artificial Intelligence</option>
+                            <option value="Cybersecurity">Cybersecurity</option>
+                            <option value="Networking">Networking</option>
+                            <option value="Data Analytics">Data Analytics</option>
+                            <option value="Game Development">Game Development</option>
+                        </select>
+                    </p>
+                </fieldset>
+
+                <!-- FIELDSET 8: ACCOUNT SECURITY -->
+                <fieldset>
+                    <legend>Account Security</legend>
+
+                    <p>
+                        <label for="username">Username:</label><br>
+                        <input type="text" id="username" name="username"
+                               placeholder="Choose a username" required autocomplete="username">
+                    </p>
+
+                    <p>
+                        <label for="password">Password:</label><br>
+                        <input type="password" id="password" name="password"
+                               minlength="8" required autocomplete="new-password"
+                               placeholder="At least 8 characters">
+                    </p>
+
+                    <p>
+                        <label for="confirm_password">Confirm Password:</label><br>
+                        <input type="password" id="confirm_password" name="confirm_password"
+                               minlength="8" required autocomplete="new-password"
+                               placeholder="Re-type your password">
+                    </p>
+
+                    <p>
+                        <label for="security_question">Security Question:</label><br>
+                        <select id="security_question" name="security_question">
+                            <option value="teacher">What is your favorite teacher's name?</option>
+                            <option value="school">What was your first school?</option>
+                            <option value="place">What is your favorite childhood place?</option>
+                            <option value="food">What is your favorite food?</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="security_answer">Security Answer:</label><br>
+                        <input type="text" id="security_answer" name="security_answer"
+                               placeholder="Your answer">
+                    </p>
+                </fieldset>
+
+                <!-- FIELDSET 9: DECLARATION -->
+                <fieldset>
+                    <legend>Declaration</legend>
+
+                    <p>
+                        I certify that the information I have provided is true and complete to the best of my
+                        knowledge.
+                    </p>
+
+                    <p>
+                        <input type="checkbox" id="agree" name="agree" value="yes" required>
+                        <label for="agree">I agree to the terms and conditions.</label>
+                    </p>
+                </fieldset>
+
+                <!-- BONUS CHALLENGE 3 & 4: PROGRESS AND METER -->
+                <fieldset>
+                    <legend>Registration Status</legend>
+
+                    <p>
+                        Registration Completion: 75%<br>
+                        <progress value="75" max="100"></progress>
+                    </p>
+
+                    <p>
+                        Computer Literacy Level<br>
+                        <meter min="0" max="100" value="85"></meter>
+                    </p>
+                </fieldset>
+
+                <!-- SUBMIT CONTROLS -->
+                <p>
+                    <input type="submit" value="Submit Registration">
+                    <input type="reset" value="Clear Form">
+                </p>
+
+            </form>
+        </section>
+
+        <!-- PART V: HTML TABLE -->
+        <section>
+            <h2>Sample Academic Schedule</h2>
+
+            <table border="1" cellpadding="6" cellspacing="0">
+                <caption>Academic Schedule</caption>
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Time</th>
+                        <th>Subject</th>
+                        <th>Room</th>
+                        <th>Instructor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday</td>
+                        <td>8:00–10:00 AM</td>
+                        <td>Web Development</td>
+                        <td>Lab 1</td>
+                        <td>Instructor A</td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>10:00–12:00 NN</td>
+                        <td>Database Systems</td>
+                        <td>Lab 2</td>
+                        <td>Instructor B</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>1:00–3:00 PM</td>
+                        <td>Networking</td>
+                        <td>Room 204</td>
+                        <td>Instructor C</td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td>8:00–10:00 AM</td>
+                        <td>Programming</td>
+                        <td>Lab 3</td>
+                        <td>Instructor D</td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td>1:00–3:00 PM</td>
+                        <td>Information Management</td>
+                        <td>Room 205</td>
+                        <td>Instructor E</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- PART VI: MULTIMEDIA -->
+        <section id="profile">
+            <h2>Student Resources</h2>
+
+            <p>Sample image :</p>
+            <img src="assets/image/studentresourcesimage.png" alt="Sample student resource image" width="300">
+
+            <p>Sample audio:</p>
+            <audio controls>
+                <source src="assets/audio/DNSC HYMN.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+
+            <p>Sample video:</p>
+            <video controls width="500">
+                <source src="assets/video/DNSC HYMN VIDEO.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+        </section>
+
+        <!-- PART VII: SEMANTIC CHALLENGE / FAQ -->
+        <section>
+            <h2>Frequently Asked Questions</h2>
+
+            <details>
+                <summary>What is the purpose of this registration form?</summary>
+                <p>It allows students to submit their personal, contact, and academic details online so the college can process enrollment more efficiently.</p>
+            </details>
+
+            <details>
+                <summary>What information should students provide?</summary>
+                <p>Students should provide accurate personal information, contact details, academic background, skills, and required declarations.</p>
+            </details>
+
+            <details>
+                <summary>Why is accurate information important?</summary>
+                <p>Accurate information ensures correct records for grades, certificates, and official school documents, preventing future issues.</p>
+            </details>
+
+            <!-- BONUS CHALLENGE 5: additional collapsible sections -->
+            <details>
+                <summary>Privacy Policy</summary>
+                <p>All information submitted through this portal is kept confidential and used only for enrollment and academic purposes.</p>
+            </details>
+
+            <details>
+                <summary>Terms and Conditions</summary>
+                <p>By submitting this form, the student agrees to comply with the college's rules, policies, and academic requirements.</p>
+            </details>
+
+            <details>
+                <summary>Registration Guidelines</summary>
+                <p>Students must fill out all required fields truthfully and submit any needed supporting documents before the deadline.</p>
+            </details>
+
+            <details>
+                <summary>Submission Requirements</summary>
+                <p>Completed registration form, a valid profile picture, and any supporting documents requested by the registrar's office.</p>
+            </details>
+        </section>
+
+    </main>
+
+    <!-- PART X: FOOTER -->
+    <footer id="contact">
+        <hr>
+        <p>&copy; 2026 Student Registration &amp; Profile Portal</p>
+        <p>Developed by: Roy B. Nabesis</p>
+        <p>BSIT/BSIS</p>
+        <p>Email: <a href="nabesis.roy@dnsc.edu.ph">nabesis.roy@dnsc.edu.ph</a></p>
+    </footer>
+
+</body>
+</html>
